@@ -10,6 +10,7 @@ class StatsController < ApplicationController
     end
   end
 
+
   # GET /stats/1
   # GET /stats/1.xml
   def show
