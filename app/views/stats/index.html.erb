@@ -1,0 +1,38 @@
+<h1>Listing stats</h1>
+
+<table border=1>
+  <tr>
+  	<th>User</th>
+    <th>Gu</th>
+    <th>Sa long</th>
+    <th>Sa short</th>
+    <th>Macs</th>
+    <th>Scanners</th>
+    <th>LL</th>
+    <th>Video</th>
+    <th>Comment</th>
+    <th>Slot</th>
+  </tr>
+
+<% @stats.each do |stat| %>
+  <tr>
+  	<td><%=h stat.User %></td>
+    <td><%=h stat.GU %></td>
+    <td><%=h stat.SA_Long %></td>
+    <td><%=h stat.SA_Short %></td>
+    <td><%=h stat.Macs %></td>
+    <td><%=h stat.Scanners %></td>
+    <td><%=h stat.LL %></td>
+    <td><%=h stat.Video %></td>
+    <td><%=h stat.Comment %></td>
+    <td><%=h stat.Slot %></td>
+    <td><%= link_to 'Show', stat %></td>
+    <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+    <td><%= link_to 'Destroy', stat, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New stat', new_stat_path %>

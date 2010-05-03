@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  GU: 
+  SA_Long: 
+  SA_Short: 
+  Macs: 
+  Scanners: 
+  LL: 
+  Video: 
+  User: MyString
+  Comment: MyText
+  Slot: 2010-02-08 13:02:33
+
+two:
+  GU: 
+  SA_Long: 
+  SA_Short: 
+  Macs: 
+  Scanners: 
+  LL: 
+  Video: 
+  User: MyString
+  Comment: MyText
+  Slot: 2010-02-08 13:02:33

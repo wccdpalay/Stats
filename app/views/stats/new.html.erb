@@ -1,0 +1,55 @@
+<h1>New stat</h1>
+
+<% form_for(@stat) do |f| %>
+  <%= f.error_messages %>
+<div style="float: left;">
+  <p>
+    <%= f.label :User %><br />
+    <%= f.select :User, @user_list %>
+  </p>
+  <p>
+    <%= f.label :GU %><br />
+    <%= f.text_field :GU %>
+  </p>
+  <p>
+    <%= f.label :SA_Long %><br />
+    <%= f.text_field :SA_Long %>
+  </p>
+  <p>
+    <%= f.label :SA_Short %><br />
+    <%= f.text_field :SA_Short %>
+  </p>
+  <p>
+    <%= f.label :Macs %><br />
+    <%= f.text_field :Macs %>
+  </p>
+  <p>
+    <%= f.label :Scanners %><br />
+    <%= f.text_field :Scanners %>
+  </p>
+  </div>
+  <div style="float:left;">
+  <p>
+    <%= f.label :LL %><br />
+    <%= f.text_field :LL %>
+  </p>
+  <p>
+    <%= f.label :Video %><br />
+    <%= f.text_field :Video %>
+  </p>
+
+  <p>
+    <%= f.label :Comment %><br />
+    <%= f.text_field :Comment %>
+  </p>
+  <p>
+    <%= f.label :Slot %><br />
+    <%= f.datetime_select :Slot%> 
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+  </div>
+<% end %>
+
+<%= link_to 'Back', stats_path %>
