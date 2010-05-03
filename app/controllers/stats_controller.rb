@@ -1,4 +1,8 @@
 class StatsController < ApplicationController
+  
+  before_filter :check_user
+  
+  
   # GET /stats
   # GET /stats.xml
   def index
