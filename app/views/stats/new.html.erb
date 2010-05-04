@@ -5,7 +5,7 @@
   <table border=1>
   	<caption>Computer Commons Statistics</caption>
 	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
-	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners %></td></tr>
+	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, :value => 0 %></td></tr>
 	<tr><td><%= f.label :video %></td><td><%= f.text_field :video %></td></tr>
 	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs %></tr>
 	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short %></tr>

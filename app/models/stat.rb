@@ -23,36 +23,46 @@ class Stat < ActiveRecord::Base
     check.vref
   end
   
+ 
+  
   def vscanners
     errors.add_to_base("Not that many Scanners!") unless scanners <= MAX_SCANNERS
+    errors.add_to_base("Can't be negative!") unless scanners >= 0
   end
   
   def vvideo
-    
+    errors.add_to_base("Not that many Scanners!") unless video <= MAX_VIDEO
+    errors.add_to_base("Can't be negative!") unless video >= 0
   end
   
   def vmac
-    
+    errors.add_to_base("Not that many Scanners!") unless mac <= MAX_MAC
+    errors.add_to_base("Can't be negative!") unless mac >= 0
   end
   
   def vsa_short
-    
+    errors.add_to_base("Not that many Scanners!") unless sa_short <= MAX_SA_SHORT
+    errors.add_to_base("Can't be negative!") unless sa_short >= 0
   end
   
   def vsa_long
-    
+    errors.add_to_base("Not that many Scanners!") unless sa_long <= MAX_SA_LONG
+    errors.add_to_base("Can't be negative!") unless sa_long >= 0
   end
   
   def vgu
-    
+    errors.add_to_base("Not that many Scanners!") unless gu <= MAX_GU
+    errors.add_to_base("Can't be negative!") unless gu >= 0
   end
   
   def vll
-    
+    errors.add_to_base("Not that many Scanners!") unless ll <= MAX_LL
+    errors.add_to_base("Can't be negative!") unless ll >= 0
   end
   
   def vref
-    
+    errors.add_to_base("Not that many Scanners!") unless ref <= MAX_REF
+    errors.add_to_base("Can't be negative!") unless ref >= 0
   end
   
   
