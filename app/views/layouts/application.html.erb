@@ -10,7 +10,7 @@
 <body>
 
 <p style="color: green"><%= flash[:notice] %></p>
-
+<p>Logged in as: <%= current_user %></p>
 <%= yield %>
 
 	<% if (ENV["RAILS_ENV"] == "development") || admin? -%>

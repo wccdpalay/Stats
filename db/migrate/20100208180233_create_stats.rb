@@ -10,7 +10,8 @@ class CreateStats < ActiveRecord::Migration
       t.integer :Video
       t.string :User
       t.text :Comment
-      t.datetime :Slot
+      t.date :date
+      t.string :time
 
       t.timestamps
     end

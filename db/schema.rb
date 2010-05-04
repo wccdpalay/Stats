@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100209170653) do
+ActiveRecord::Schema.define(:version => 20100208180233) do
 
   create_table "stats", :force => true do |t|
     t.integer  "GU"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(:version => 20100209170653) do
     t.integer  "Video"
     t.string   "User"
     t.text     "Comment"
-    t.datetime "Slot"
+    t.date     "date"
+    t.string   "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
 end
