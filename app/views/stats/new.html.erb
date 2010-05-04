@@ -4,19 +4,20 @@
   <%= f.error_messages %>
   <table border=1>
   	<caption>Computer Commons Statistics</caption>
-	<tr><td><%= f.label "User Name" %>:</td> <td><%= current_user %></td></tr>
-	 <tr><td><%= f.label :scanners %>:</td> <td> <%= f.text_field :scanners %></td></tr>
-	  <tr><td><%= f.label :video %>:</td> <td><%= f.text_field :video %></td></tr>
-	  <tr><td><%= f.label :macs %>: <td><%= f.text_field :macs %></tr>
-	  <tr><td><%= f.label :sa_short %>: <td><%= f.text_field :sa_short %></tr>
-	  <tr><td><%= f.label :sa_long %>: <td><%= f.text_field :sa_long %></tr>
-  	  <tr><td><%= f.label :gu %></td>: <td><%= f.text_field :gu %></td></tr>
-	  <tr><td><%= f.label :ll %></td>: <td><%= f.text_field :ll %></td></tr>
-	  <tr><td><%= f.label :ref %></td>: <td><%= f.text_field :ref %></td></tr>
-	  <tr><td><%= f.label :comment %></td>: <td><%= f.text_field :comment %></td></tr>
-	  <tr><td><%= f.label :date %></td>: <td><%= f.date_select :date%></td></tr>  
-	  <tr><td><%= f.label :time %></td>: <td><%= %></td></tr>
-	  <tr><td><%= f.submit 'Create' %></td></tr
+	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
+	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners %></td></tr>
+	<tr><td><%= f.label :video %></td><td><%= f.text_field :video %></td></tr>
+	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs %></tr>
+	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short %></tr>
+	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long %></tr>
+  	<tr><td><%= f.label :gu %></td><td><%= f.text_field :gu %></td></tr>
+	<tr><td><%= f.label :ll %></td><td><%= f.text_field :ll %></td></tr>
+	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref %></td></tr>
+	<tr><td><%= f.label :comment %></td><td><%= f.text_field :comment %></td></tr>
+	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
+	<tr><td><%= f.label :time %></td><td><%= %></td></tr>
+	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>
+	<tr><td colspan = 2>&nbsp;<%= f.submit 'Create' %></td></tr>
   </table>
 <% end %>
 
