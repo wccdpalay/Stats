@@ -1,22 +1,54 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "Stats"
+set :deploy_to, "/Users/adminosx/Sites/#{application}"
+set :deploy_via, :export
 
-set :scm, :subversion
+set :rake, '/usr/local/bin/rake'
+set :ruby,'/usr/local/bin/ruby'
+set :gem, '/usr/local/bin/gem'
+
+
+set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :repository,  "git@github.com:wccdpalay/#{application}.git"
+set :branch, "master"
+set :scm_command, "/usr/local/git/bin/git"
+set :local_scm_command, "git"
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+default_run_options[:pty] = true
+
+set :ssh_options, {:forward_agent => true}
+set :user, "adminosx"
+set :group, "admin"
+
+
+role :web, "207.72.2.8"                          # Your HTTP server, Apache/etc
+role :app, "207.72.2.8"                          # This may be the same as your `Web` server
+role :db,  "207.72.2.8", :primary => true # This is where Rails migrations will run
+
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+
+
+namespace :deploy do
+  
+  
+  
+  task :start, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+    run "cp ~/Stats_database.yml ~/Sites/Stats/current/config/database.yml"
+  end
+
+  task :stop, :roles => :app do
+    # Do nothing.
+  end
+
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "cp ~/Stats_database.yml ~/Sites/Stats/current/config/database.yml"
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+
+end
