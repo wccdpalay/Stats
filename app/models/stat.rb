@@ -24,7 +24,7 @@ class Stat < ActiveRecord::Base
   end
   
   def vscanners
-    errors.add_to_base("Not that many Scanners!") unless scanners < MAX_SCANNERS
+    errors.add_to_base("Not that many Scanners!") unless scanners <= MAX_SCANNERS
   end
   
   def vvideo

@@ -56,7 +56,7 @@ class StatsController < ApplicationController
   # POST /stats.xml
   def create
     @stat = Stat.new(params[:stat])
-
+    @stat.user = get_user(session[:user])
     respond_to do |format|
       if @stat.save
         flash[:notice] = 'Stat was successfully created.'
