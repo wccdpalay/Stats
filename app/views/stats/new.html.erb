@@ -4,47 +4,40 @@
   <%= f.error_messages %>
 <div style="float: left;">
   <p>
-    <%= f.label :User %><br />
-    <%= f.select :User, @user_list %>
+    <%= f.label :user %>: <%= current_user %>
   </p>
   <p>
-    <%= f.label :GU %><br />
-    <%= f.text_field :GU %>
+    <%= f.label :gu %>: <%= f.text_field :gu %>
   </p>
   <p>
-    <%= f.label :SA_Long %><br />
-    <%= f.text_field :SA_Long %>
+    <%= f.label :sa_long %>: <%= f.text_field :sa_long %>
   </p>
   <p>
-    <%= f.label :SA_Short %><br />
-    <%= f.text_field :SA_Short %>
+    <%= f.label :sa_short %>: <%= f.text_field :sa_short %>
   </p>
   <p>
-    <%= f.label :Macs %><br />
-    <%= f.text_field :Macs %>
+    <%= f.label :macs %>: <%= f.text_field :Macs %>
   </p>
   <p>
-    <%= f.label :Scanners %><br />
-    <%= f.text_field :Scanners %>
+    <%= f.label :scanners %>: <%= f.text_field :scanners %>
   </p>
   </div>
   <div style="float:left;">
   <p>
-    <%= f.label :LL %><br />
-    <%= f.text_field :LL %>
+    <%= f.label :ll %>: <%= f.text_field :ll %>
   </p>
   <p>
-    <%= f.label :Video %><br />
-    <%= f.text_field :Video %>
+    <%= f.label :video %>: <%= f.text_field :video %>
   </p>
 
   <p>
-    <%= f.label :Comment %><br />
-    <%= f.text_field :Comment %>
+    <%= f.label :comment %>: <%= f.text_field :comment %>
   </p>
   <p>
-    <%= f.label :Slot %><br />
-    <%= f.datetime_select :Slot%> 
+    <%= f.label :date %>: <%= f.date_select :dlot%> 
+  </p>  
+  <p>
+    <%= f.label :time %>: <%= %> 
   </p>
   <p>
     <%= f.submit 'Create' %>

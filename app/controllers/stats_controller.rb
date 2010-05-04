@@ -6,7 +6,7 @@ class StatsController < ApplicationController
   # GET /stats
   # GET /stats.xml
   def index
-    @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE slot > ?", (Date.today-1)])
+    @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date > ?", (Date.today-1)])
 
     respond_to do |format|
       format.html # index.html.erb
