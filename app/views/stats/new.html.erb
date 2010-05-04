@@ -6,13 +6,13 @@
   	<caption>Computer Commons Statistics</caption>
 	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
 	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, :value => 0 %></td></tr>
-	<tr><td><%= f.label :video %></td><td><%= f.text_field :video %></td></tr>
-	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs %></tr>
-	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short %></tr>
-	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long %></tr>
-  	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu %></td></tr>
-	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll %></td></tr>
-	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref %></td></tr>
+	<tr><td><%= f.label :video %></td><td><%= f.text_field :video, :value => 0  %></td></tr>
+	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs, :value => 0  %></tr>
+	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short, :value => 0  %></tr>
+	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long, :value => 0  %></tr>
+  	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu, :value => 0  %></td></tr>
+	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, :value => 0  %></td></tr>
+	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, :value => 0  %></td></tr>
 	<tr><td><%= f.label :comment %></td><td><%= f.text_field :comment %></td></tr>
 	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
 	<tr><td><%= f.label :time %></td><td><%= %></td></tr>

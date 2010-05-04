@@ -15,7 +15,7 @@ class Stat < ActiveRecord::Base
   validate do |check|
     check.vscanners
     check.vvideo
-    check.vmac
+    check.vmacs
     check.vsa_short
     check.vsa_long
     check.vgu
@@ -31,37 +31,37 @@ class Stat < ActiveRecord::Base
   end
   
   def vvideo
-    errors.add_to_base("Not that many Scanners!") unless video <= MAX_VIDEO
+    errors.add_to_base("Not that many Video Editing Stations") unless video <= MAX_VIDEO
     errors.add_to_base("Can't be negative!") unless video >= 0
   end
   
-  def vmac
-    errors.add_to_base("Not that many Scanners!") unless mac <= MAX_MAC
-    errors.add_to_base("Can't be negative!") unless mac >= 0
+  def vmacs
+    errors.add_to_base("Not that many Macs!") unless macs <= MAX_MAC
+    errors.add_to_base("Can't be negative!") unless macs >= 0
   end
   
   def vsa_short
-    errors.add_to_base("Not that many Scanners!") unless sa_short <= MAX_SA_SHORT
+    errors.add_to_base("Not that many PCs in Spec. Apps Short!") unless sa_short <= MAX_SA_SHORT
     errors.add_to_base("Can't be negative!") unless sa_short >= 0
   end
   
   def vsa_long
-    errors.add_to_base("Not that many Scanners!") unless sa_long <= MAX_SA_LONG
+    errors.add_to_base("Not that many PCs in Spec. Apps Long!") unless sa_long <= MAX_SA_LONG
     errors.add_to_base("Can't be negative!") unless sa_long >= 0
   end
   
   def vgu
-    errors.add_to_base("Not that many Scanners!") unless gu <= MAX_GU
+    errors.add_to_base("Not that many PCs in General Use!") unless gu <= MAX_GU
     errors.add_to_base("Can't be negative!") unless gu >= 0
   end
   
   def vll
-    errors.add_to_base("Not that many Scanners!") unless ll <= MAX_LL
+    errors.add_to_base("Not that many PCs in Language Lab!") unless ll <= MAX_LL
     errors.add_to_base("Can't be negative!") unless ll >= 0
   end
   
   def vref
-    errors.add_to_base("Not that many Scanners!") unless ref <= MAX_REF
+    errors.add_to_base("Not that many PCs in the Reference Area") unless ref <= MAX_REF
     errors.add_to_base("Can't be negative!") unless ref >= 0
   end
   
