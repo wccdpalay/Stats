@@ -57,6 +57,11 @@ input{
 }
 
 #stat_submit{
-	
+	width: 5em;
+}
+
+#stat_comment{
+	width: 15%;
+	height: 7em;
 }
 
