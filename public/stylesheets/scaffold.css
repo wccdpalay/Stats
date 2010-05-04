@@ -1,4 +1,4 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #eef; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -53,10 +53,10 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 input{
-	width: 15%
+	width: 1.5em
 }
 
 #stat_submit{
-	width: 40%;
+	
 }
 

@@ -8,6 +8,7 @@ class CreateStats < ActiveRecord::Migration
       t.integer :scanners
       t.integer :ll
       t.integer :video
+      t.integer :ref
       t.integer :user_id
       t.text :comment
       t.date :date
