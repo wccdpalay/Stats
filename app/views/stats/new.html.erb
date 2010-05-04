@@ -3,7 +3,7 @@
 <% form_for(@stat) do |f| %>
   <%= f.error_messages %>
   <div style="float: left;">
-	  <p><%= f.label :user %>: <%= current_user %></p>
+	  <p><%= f.label "User Name" %>: <%= current_user %></p>
 	  <p><%= f.label :scanners %>: <%= f.text_field :scanners %></p>
 	  <p><%= f.label :video %>: <%= f.text_field :video %>  </p>
 	  <p><%= f.label :macs %>: <%= f.text_field :Macs %></p>
@@ -11,6 +11,7 @@
 	  <p><%= f.label :sa_long %>: <%= f.text_field :sa_long %></p>  
   	  <p><%= f.label :gu %>: <%= f.text_field :gu %></p>
 	  <p><%= f.label :ll %>: <%= f.text_field :ll %></p>
+	  <p><%= f.label :ref %>: <%= f.text_field :ref %></p>
 	  <p><%= f.label :comment %>: <%= f.text_field :comment %></p>
 	  <p><%= f.label :date %>: <%= f.date_select :dlot%></p>  
 	  <p><%= f.label :time %>: <%= %></p>
