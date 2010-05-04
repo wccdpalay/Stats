@@ -10,4 +10,8 @@ module ApplicationHelper
       user.usertype == "Administrator"
     end
   end
+  
+  def current_user
+    session[:username]
+  end
 end
