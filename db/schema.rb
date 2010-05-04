@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20100208180233) do
     t.integer  "user_id"
     t.text     "comment"
     t.date     "date"
-    t.string   "dime"
+    t.string   "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

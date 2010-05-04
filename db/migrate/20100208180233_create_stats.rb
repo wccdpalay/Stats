@@ -12,7 +12,7 @@ class CreateStats < ActiveRecord::Migration
       t.integer :user_id
       t.text :comment
       t.date :date
-      t.string :dime
+      t.string :time
 
       t.timestamps
     end
