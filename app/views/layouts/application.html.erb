@@ -10,6 +10,10 @@
   <script>
 	function update_total()
 	{
+		if stat_scanners.value == null || stat_scanners.value == ""
+			stat_scanners.value = 0;
+		
+		
 		stat_total.value = parseInt(stat_scanners.value) + parseInt(stat_video.value) +
 			parseInt(stat_macs.value) + parseInt(stat_sa_short.value) + parseInt(stat_sa_long.value) + 
 			parseInt(stat_gu.value) + parseInt(stat_ll.value) + parseInt(stat_ref.value); 
