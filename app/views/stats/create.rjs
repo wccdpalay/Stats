@@ -1,1 +1,4 @@
-page.insert_html :bottom, "stat_list", {:partial => "stat_row", :locals => {:stat => @stat}} 
+page.insert_html :bottom, "stat_list", {:partial => "stat_row", :locals => {:stat => @stat}}
+page[:new_stat].reset
+page.replace_html :notice, flash[:notice]
+flash.discard
