@@ -6,13 +6,18 @@ class StatsController < ApplicationController
   # GET /stats
   # GET /stats.xml
   def index
+    #showing stats
     @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date > ?", (Date.today-1)])
 
+
+    #new stats
+    @stat = Stat.new
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @stats }
     end
   end
+  
 
 
   # GET /stats/1
@@ -37,10 +42,6 @@ class StatsController < ApplicationController
   # GET /stats/new.xml
   def new
     @stat = Stat.new
-    @user_list = []
-    for x in User.find(:all)
-      @user_list << x.name
-    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @stat }
@@ -62,6 +63,7 @@ class StatsController < ApplicationController
         flash[:notice] = 'Stat was successfully created.'
         format.html { redirect_to(@stat) }
         format.xml  { render :xml => @stat, :status => :created, :location => @stat }
+        format.js   {}
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @stat.errors, :status => :unprocessable_entity }

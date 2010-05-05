@@ -1,6 +1,6 @@
 <h1>Listing stats</h1>
 
-<table border=1>
+<table border=1 id="stat_list">
   <tr>
   	<th>User</th>
     <th>Scanners</th>
@@ -17,26 +17,31 @@
   </tr>
 
 <% @stats.each do |stat| %>
-  <tr>
-  	<td><%=h stat.user %></td>
-    <td><%=h stat.scanners %></td>
-    <td><%=h stat.video %></td>
-    <td><%=h stat.macs %></td>
-    <td><%=h stat.sa_short %></td>
-    <td><%=h stat.sa_long %></td>
-    <td><%=h stat.gu %></td>
-    <td><%=h stat.ll %></td>
-    <td><%=h stat.ref %></td>
-    <td><%=h stat.comment %></td>
-    <td><%=h stat.date %></td>
-	<td><%=h stat.time %></td>
-    <td><%= link_to 'Show', stat %></td>
-    <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
-    <td><%= link_to 'Destroy', stat, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <%= render :partial => 'stat_row', :locals => {:stat => stat} %>
 <% end %>
 </table>
 
 <br />
+<h1>Enter new statistics</h1>
 
-<%= link_to 'New stat', new_stat_path %>
+<% form_remote_for(@stat) do |f| %>
+  <%= f.error_messages %>
+  <table border=1>
+  	<caption>Computer Commons Statistics</caption>
+	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
+	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :video %></td><td><%= f.text_field :video, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs, {:value => 0, :onchange => 'update_total()'} %></tr>
+	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short, {:value => 0, :onchange => 'update_total()'} %></tr>
+	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long, {:value => 0, :onchange => 'update_total()'} %></tr>
+  	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :comment %></td><td><%= f.text_field :comment %></td></tr>
+	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
+	<tr><td><%= f.label :time %></td><td><%= %></td></tr>
+	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>
+	<tr><td colspan = 2>&nbsp;<%= f.submit 'Create' %></td></tr>
+  </table>
+<% end %>
+

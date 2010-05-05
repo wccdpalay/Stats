@@ -1,52 +1,26 @@
 <h1>Editing stat</h1>
 
+
 <% form_for(@stat) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :GU %><br />
-    <%= f.text_field :GU %>
-  </p>
-  <p>
-    <%= f.label :SA_Long %><br />
-    <%= f.text_field :SA_Long %>
-  </p>
-  <p>
-    <%= f.label :SA_Short %><br />
-    <%= f.text_field :SA_Short %>
-  </p>
-  <p>
-    <%= f.label :Macs %><br />
-    <%= f.text_field :Macs %>
-  </p>
-  <p>
-    <%= f.label :Scanners %><br />
-    <%= f.text_field :Scanners %>
-  </p>
-  <p>
-    <%= f.label :LL %><br />
-    <%= f.text_field :LL %>
-  </p>
-  <p>
-    <%= f.label :Video %><br />
-    <%= f.text_field :Video %>
-  </p>
-  <p>
-    <%= f.label :User %><br />
-    <%= f.text_field :User %>
-  </p>
-  <p>
-    <%= f.label :Comment %><br />
-    <%= f.text_area :Comment %>
-  </p>
-  <p>
-    <%= f.label :Slot %><br />
-    <%= f.datetime_select :Slot %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <table border=1>
+  	<caption>Computer Commons Statistics</caption>
+	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
+	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :video %></td><td><%= f.text_field :video, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs, {:value => 0, :onchange => 'update_total()'} %></tr>
+	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short, {:value => 0, :onchange => 'update_total()'} %></tr>
+	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long, {:value => 0, :onchange => 'update_total()'} %></tr>
+  	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :comment %></td><td><%= f.text_field :comment %></td></tr>
+	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
+	<tr><td><%= f.label :time %></td><td><%= %></td></tr>
+	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>
+	<tr><td colspan = 2>&nbsp;<%= f.submit 'Update' %></td></tr>
+  </table>
 <% end %>
-
+ 
 <%= link_to 'Show', @stat %> |
 <%= link_to 'Back', stats_path %>

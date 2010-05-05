@@ -1,0 +1,17 @@
+<tr>
+  	<td><%=h stat.user %></td>
+    <td><%=h stat.scanners %></td>
+    <td><%=h stat.video %></td>
+    <td><%=h stat.macs %></td>
+    <td><%=h stat.sa_short %></td>
+    <td><%=h stat.sa_long %></td>
+    <td><%=h stat.gu %></td>
+    <td><%=h stat.ll %></td>
+    <td><%=h stat.ref %></td>
+    <td><%=h stat.comment %></td>
+    <td><%=h stat.date %></td>
+	<td><%=h stat.time %></td>
+    <td><%= link_to 'Show', stat %></td>
+    <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+    <td><%= link_to 'Destroy', stat, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>

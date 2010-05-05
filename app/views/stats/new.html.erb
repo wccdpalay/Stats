@@ -1,11 +1,3 @@
-<script>
-	function update_total()
-	{
-		stat_total.value = parseInt(stat_scanners.value) + parseInt(stat_video.value) +
-			parseInt(stat_macs.value) + parseInt(stat_sa_short.value) + parseInt(stat_sa_long.value) + 
-			parseInt(stat_gu.value) + parseInt(stat_ll.value) + parseInt(stat_ref.value); 
-	}
-</script>
 <h1>Enter new statistics</h1>
 
 <% form_for(@stat) do |f| %>
@@ -13,14 +5,14 @@
   <table border=1>
   	<caption>Computer Commons Statistics</caption>
 	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
-	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, {:value => 0, onchange => 'update_total()'} %></td></tr>
-	<tr><td><%= f.label :video %></td><td><%= f.text_field :video, {:value => 0, onchange => 'update_total()'} %></td></tr>
-	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs, {:value => 0, onchange => 'update_total()'} %></tr>
-	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short, {:value => 0, onchange => 'update_total()'} %></tr>
-	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long, {:value => 0, onchange => 'update_total()'} %></tr>
-  	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu, {:value => 0, onchange => 'update_total()'} %></td></tr>
-	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, {:value => 0, onchange => 'update_total()'} %></td></tr>
-	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, {:value => 0, onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :video %></td><td><%= f.text_field :video, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :macs %></td><td><%= f.text_field :macs, {:value => 0, :onchange => 'update_total()'} %></tr>
+	<tr><td><%= f.label :sa_short %></td><td><%= f.text_field :sa_short, {:value => 0, :onchange => 'update_total()'} %></tr>
+	<tr><td><%= f.label :sa_long %></td><td><%= f.text_field :sa_long, {:value => 0, :onchange => 'update_total()'} %></tr>
+  	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, {:value => 0, :onchange => 'update_total()'} %></td></tr>
+	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, {:value => 0, :onchange => 'update_total()'} %></td></tr>
 	<tr><td><%= f.label :comment %></td><td><%= f.text_field :comment %></td></tr>
 	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
 	<tr><td><%= f.label :time %></td><td><%= %></td></tr>
