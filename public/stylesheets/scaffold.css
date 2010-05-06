@@ -9,6 +9,13 @@ body {
 	width 97%;
 }
 
+#ja-wrapper{
+	min-width: 100%;
+	margin: 0px;
+	width: 100%;
+	
+}
+
 #ja-header{
 	height: 80px;
 	position: relative;

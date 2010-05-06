@@ -56,6 +56,7 @@
 </head>
 <body>
 
+<div id="ja-wrapper">
 
 <!-- TOP BAR -->
 <div id="ja-headerwrap"> 
@@ -68,22 +69,8 @@
 		</h1> 
 		<p class="site-slogan">Washtenaw Community College</p> 
 	
-			<ul class="ja-usertools-font"> 
-	      <li><img style="cursor: pointer;" title="Increase font size" src="https://serafina.labs.is.wccnet.org/templates/commons/images/user-increase.png" alt="Increase font size" id="ja-tool-increase" onclick="switchFontSize('commons_ja_font','inc'); return false;" /></li> 
-		  <li><img style="cursor: pointer;" title="Default font size" src="https://serafina.labs.is.wccnet.org/templates/commons/images/user-reset.png" alt="Default font size" id="ja-tool-reset" onclick="switchFontSize('commons_ja_font',3); return false;" /></li> 
-		  <li><img style="cursor: pointer;" title="Decrease font size" src="https://serafina.labs.is.wccnet.org/templates/commons/images/user-decrease.png" alt="Decrease font size" id="ja-tool-decrease" onclick="switchFontSize('commons_ja_font','dec'); return false;" /></li> 
-		</ul> 
-		<script type="text/javascript">var CurrentFontSize=parseInt('3');</script> 
-		
-			<div id="ja-search"> 
-			<form action="index.php" method="post"> 
-	<div class="search"> 
-		<input name="searchword" id="mod_search_searchword" maxlength="20" alt="Search" class="inputbox" type="text" size="20" value="search..."  onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" />	</div> 
-	<input type="hidden" name="task"   value="search" /> 
-	<input type="hidden" name="option" value="com_search" /> 
-	<input type="hidden" name="Itemid" value=1 /> 
-</form> 
-		</div> 
+
+
 	
 	</div> 
 </div> 
@@ -116,7 +103,7 @@
 <!-- END MAIN PANEL-->
 
 
-
+</div>
 
 	<% if (ENV["RAILS_ENV"] == "development") || admin? -%>
       <div id="debug">
