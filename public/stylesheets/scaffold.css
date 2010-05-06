@@ -9,9 +9,13 @@ body {
 	width 97%;
 }
 
+#ja-mainbody{
+	width: 80%;
+	float: left;
+}
+
 #ja-contentwrap{
 	float: right;
-	width: 75%;
 	display: block;
 	background: #fcfcfc:
 }
@@ -56,7 +60,7 @@ p.site-slogan{
         float: left;
         overflow: hidden;
         padding-top: 10px;
-        width: 19.99%;
+        width: 24.99%;
 }
 
 

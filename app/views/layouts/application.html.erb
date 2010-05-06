@@ -62,8 +62,6 @@
 <div id="ja-headerwrap"> 
 	<div id="ja-header" class="clearfix" style="background: #323232; width: 100%;"> 
  
-	<div class="ja-headermask">&nbsp;</div> 
- 
 			<h1 class="logo-text"> 
 			<a href="/index.php" title="Computer Commons Staff Site"><span style="color: #AAA;">Serafina - Staff Site</span></a> 
 		</h1> 
@@ -75,13 +73,14 @@
 	</div> 
 </div> 
 <!-- END TOP BAR -->
+<div id="ja-mainbody">
 <!-- MAIN PANEL -->
-<div id="ja-contentwrap" style="background: #fcfcfc;">
+<div id="ja-contentwrap" style="background: #fcfcfc; width: 75%;">
 <p style="color: green" id="notice"><%= flash[:notice] %></p>
 <p style="float:right;">Logged in as: <%= current_user %></p>
 <%= yield %>
 
-<% if (current_user == "dpalay" -%>
+<% if (current_user == "dpalay") -%>
       <div id="debug">
 
         <a href="#" onclick="Element.toggle('params_debug_info');return false;">
@@ -138,6 +137,7 @@
 			<li class="item24"><a href="/index.php?option=com_user&amp;view=login&amp;Itemid=24"><span>Logout</span></a></li>
 			</ul>
 </div> 
+</div>
 </div>
 
 	
