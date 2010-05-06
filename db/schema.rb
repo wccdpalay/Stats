@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20100208180233) do
     t.integer  "video"
     t.integer  "ref"
     t.integer  "user_id"
+    t.integer  "eod_door"
     t.text     "comment"
     t.date     "date"
     t.string   "time"

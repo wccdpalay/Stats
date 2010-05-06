@@ -47,4 +47,26 @@ class ApplicationController < ActionController::Base
   def get_joomla_session_id
     cookies[JSESSION_NAME]
   end
+  
+  def get_closest_time
+    t = Time.now
+    tval = ""
+    case t.min
+      when t.min < 16
+        tval << t.hour - 1
+        tval << ":00"
+      when (t.min >=16 && t.min < 45)
+        tval << t.hour
+        tval << ":30"
+      when t.min >= 46
+        tval << t.hour + 1
+        tval << ":00"
+    else
+    end
+  
+  end
+  
+      
+       
+  end
 end

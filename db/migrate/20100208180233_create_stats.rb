@@ -10,6 +10,7 @@ class CreateStats < ActiveRecord::Migration
       t.integer :video
       t.integer :ref
       t.integer :user_id
+      t.integer :eod_door
       t.text :comment
       t.date :date
       t.string :time
