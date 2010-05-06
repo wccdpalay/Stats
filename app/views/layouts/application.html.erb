@@ -18,11 +18,24 @@
 		if (el.value < 0 || el.value > max )
 		{
 			el.value = 0;
-			el.focus();
 			alert("Improper value in " + el.name.match(/\[.*\]/)[0]);
+			el.focus();
 		}
-			
 	}
+	
+	function check_times()
+	{
+		var els = stat_list.getElementsByClassName("time_col");
+		for (var i = 0; i < els.length; i++){
+			if (els[i].innerHTML == stat_time.value) {
+				alert("This time has already been recorded!");
+				stat_time.value = stat_time.children[stat_time.selectedIndex + 1];
+				stat_time.focus();
+			}
+		}
+		
+	}
+	
 	function update_total()
 	{
 		check_vals(stat_scanners, 2);

@@ -10,7 +10,7 @@
     <td><%=h stat.ref %></td>
     <td><%=h stat.comment %></td>
     <td><%=h stat.date %></td>
-	<td><%=h stat.time %></td>
+	<td class="time_col"><%=h stat.time %></td>
     <td><%= link_to 'Show', stat %></td>
     <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
     <td><%= link_to 'Destroy', stat, :confirm => 'Are you sure?', :method => :delete %></td>

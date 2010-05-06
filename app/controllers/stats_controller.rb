@@ -66,7 +66,10 @@ class StatsController < ApplicationController
         format.xml  { render :xml => @stat, :status => :created, :location => @stat }
         format.js   {}
       else
-        format.js {flash[:notice] = 'Something went wrong!'; render :action => "new"}
+        format.js {
+          flash[:notice] = 'Something went wrong!' 
+          render :action => "new"
+          }
         format.html { render :action => "new" }
         format.xml  { render :xml => @stat.errors, :status => :unprocessable_entity }
       end
