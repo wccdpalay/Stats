@@ -9,6 +9,7 @@ class StatsController < ApplicationController
     #showing stats
     @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date > ?", (Date.today-1)])
     @now = get_closest_time
+    @date = Date.today.strftime("%A, %B %d, %Y")
     session[:now] = @now
     #new stats
     @stat = Stat.new

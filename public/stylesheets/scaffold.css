@@ -1,4 +1,8 @@
-body { background-color: #eef; color: #333; }
+body { 	
+	background-color: #f2f2f2; 
+	color: #333; 
+	line-height: 150%;
+	}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

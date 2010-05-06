@@ -1,4 +1,4 @@
-<h1>Listing stats</h1>
+<h1>Listing stats for <%=@date%></h1>
 
 <table border=1 id="stat_list">
   <tr>
@@ -23,12 +23,11 @@
 </table>
 
 <br />
-<h1>Enter new statistics</h1>
+<h2>Computer Commons Statistics</h2>
 
 <% form_remote_for(@stat) do |f| %>
   <%= f.error_messages %>
   <table border=1>
-  	<caption>Computer Commons Statistics</caption>
 	<tr><td><%= f.label "User Name" %></td><td><%= current_user %></td></tr>
 	<tr><td><%= f.label :scanners %></td><td> <%= f.text_field :scanners, {:value => 0, :onchange => 'update_total()'} %></td></tr>
 	<tr><td><%= f.label :video %></td><td><%= f.text_field :video, {:value => 0, :onchange => 'update_total()'} %></td></tr>
