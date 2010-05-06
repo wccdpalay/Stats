@@ -23,6 +23,8 @@ class Stat < ActiveRecord::Base
     check.vref
   end
   
+  validates_uniqueness_of :time, :scope => :date
+  
  
   
   def vscanners

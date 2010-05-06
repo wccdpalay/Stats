@@ -13,7 +13,7 @@
   	<tr><td><%= f.label "General Use"%></td><td><%= f.text_field :gu, {:value => 0, :onchange => 'update_total()'} %></td></tr>
 	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, {:value => 0, :onchange => 'update_total()'} %></td></tr>
 	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, {:value => 0, :onchange => 'update_total()'} %></td></tr>
-	<tr><td><%= f.label :comment %></td><td><%= f.text_field :comment %></td></tr>
+	<tr><td><%= f.label :comment %></td><td><%= f.text_area :comment %></td></tr>
 	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
 	<tr><td><%= f.label :time %></td><td><%= select("stat", "time", options_for_select(TIME_SLOTS, @now))%></td></tr>
 	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>

@@ -81,8 +81,5 @@ class ApplicationController < ActionController::Base
     end
     tval = hr + min
   end
-  
-      
        
-  end
 end
