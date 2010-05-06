@@ -73,7 +73,7 @@ class ApplicationController < ActionController::Base
     elsif t.min >= 46
         hr = (t.hour + 1)
         min = ":00"
-        if hr_i >= 12
+        if hr >= 12
           hr -= 12
           min += " PM"
         else
