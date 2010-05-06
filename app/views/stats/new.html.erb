@@ -16,6 +16,7 @@
 	<tr><td><%= f.label :comment %></td><td><%= f.text_area :comment %></td></tr>
 	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
 	<tr><td><%= f.label :time %></td><td><%= select("stat", "time", options_for_select(TIME_SLOTS, @now))%></td></tr>
+	<tr><td><%= f.label :door_counter%>(Only for end of the day!)</td><td><%= f.text_area :eod_door%></td></tr>
 	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>
 	<tr><td colspan = 2>&nbsp;<%= f.submit 'Create' %></td></tr>
   </table>
