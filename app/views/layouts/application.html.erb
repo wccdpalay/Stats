@@ -76,6 +76,14 @@
 </div> 
 <!-- END TOP BAR -->
 
+<!-- MAIN PANEL -->
+<div id="ja-contentwrap">
+<p style="color: green" id="notice"><%= flash[:notice] %></p>
+<p style="float:right;">Logged in as: <%= current_user %></p>
+<%= yield %>
+<!-- END MAIN PANEL-->
+</div>
+
 <!-- SIDE BAR -->
 <div class="moduletable_menu"> 
 					<h3>Main Menu</h3> 
@@ -96,11 +104,7 @@
 <!-- END SIDE BAR -->
 
 
-<!-- MAIN PANEL -->
-<p style="color: green" id="notice"><%= flash[:notice] %></p>
-<p style="float:right;">Logged in as: <%= current_user %></p>
-<%= yield %>
-<!-- END MAIN PANEL-->
+
 
 
 </div>

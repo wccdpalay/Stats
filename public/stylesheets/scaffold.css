@@ -9,6 +9,12 @@ body {
 	width 97%;
 }
 
+#ja-contentwrap{
+	float: right;
+	width: 75%;
+	display: block;
+}
+
 #ja-wrapper{
 	min-width: 100%;
 	margin: 0px;
@@ -54,6 +60,14 @@ p.site-slogan{
 	padding: 2px 5px;
 	position: absolute;
 }
+
+.moduletable_menu{
+        float: left;
+        overflow: hidden;
+        padding-top: 10px;
+        width: 24.99%;
+}
+
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
