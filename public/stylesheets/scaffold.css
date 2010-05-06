@@ -35,7 +35,8 @@ body {
 	position: absolute;
 	right: -1px;
 	top: 0px;
-	width: 602px;
+	width: 100%;
+	background-position: 100% 0%;
 }
 
 h1.logo-text{
@@ -66,7 +67,7 @@ p.site-slogan{
         float: left;
         overflow: hidden;
         padding-top: 10px;
-        width: 24.99%;
+        width: 19.99%;
 }
 
 
