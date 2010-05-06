@@ -8,7 +8,7 @@
     <td><%=h stat.gu %></td>
     <td><%=h stat.ll %></td>
     <td><%=h stat.ref %></td>
-    <td><%=h stat.comment %></td>
+    <td><%= check_box_tag("has_comment", 'yes', !stat.comment.nil?, {:disabled => "true"} %></td>
     <td><%=h stat.date %></td>
 	<td class="time_col"><%=h stat.time %></td>
 	<td><%=h stat.eod_door%></td>
