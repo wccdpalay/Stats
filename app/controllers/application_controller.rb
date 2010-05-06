@@ -53,25 +53,28 @@ class ApplicationController < ActionController::Base
     hr = ""
     min = ""
     if t.min < 16
-        hr = (t.hour - 1).to_s
+        hr = (t.hour - 1)
         min =  ":00"
-        if hr.to_i >= 12
+        if hr >= 12
+          hr -= 12
           min += " PM"
         else
           min += " AM"
         end      
     elsif (t.min >=16 && t.min < 45)
-        hr =  t.hour.to_s
+        hr =  t.hour
         min = ":30"
-        if hr.to_i >= 12
+        if hr >= 12
+          hr -= 12
           min += " PM"
         else
           min += " AM"
         end
     elsif t.min >= 46
-        hr = (t.hour + 1).to_s
+        hr = (t.hour + 1)
         min = ":00"
-        if hr.to_i >= 12
+        if hr_i >= 12
+          hr -= 12
           min += " PM"
         else
           min += " AM"
@@ -79,7 +82,7 @@ class ApplicationController < ActionController::Base
     else
       
     end
-    tval = hr + min
+    tval = hr.to_s + min.to_s
   end
        
 end
