@@ -28,17 +28,6 @@ body {
 	position: relative;
 }
 
-.ja-headermask{
-	background: url(https://serafina.labs.is.wccnet.org/templates/commons/images/header/header1.jpg) no-repeat top right
-	display: block;
-	height: 80px;
-	position: absolute;
-	right: -1px;
-	top: 0px;
-	width: 100%;
-	background-position: 100% 0%;
-}
-
 h1.logo-text{
 	font-size:180%;
 	margin: 0px 0px 0px 5px;
