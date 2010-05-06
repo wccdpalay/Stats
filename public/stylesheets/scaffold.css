@@ -29,7 +29,7 @@ body {
 }
 
 .ja-headermask{
-	background: url(http://serafina.labs.is.wccnet.org/templates/commons/images/header-mask.png);
+	background: url(https://serafina.labs.is.wccnet.org/templates/commons/images/header/header1.jpg) no-repeat top right
 	display: block;
 	height: 80px;
 	position: absolute;
