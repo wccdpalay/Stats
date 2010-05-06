@@ -8,7 +8,7 @@ class StatsController < ApplicationController
   def index
     #showing stats
     @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date > ?", (Date.today-1)])
-
+    @now = get_closest_time
 
     #new stats
     @stat = Stat.new
@@ -42,6 +42,7 @@ class StatsController < ApplicationController
   # GET /stats/new.xml
   def new
     @stat = Stat.new
+    @now = get_closest_time
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @stat }
