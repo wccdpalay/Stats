@@ -69,8 +69,8 @@ Rails::Initializer.run do |config|
              "6:30 PM", "7:30 PM", "8:30 PM",
              "9:30 PM", "10:30 PM", "11:30 PM"]
                
-     START_TIME = "6:00 AM"
-     END_TIME = "10:00 PM"
+     START_TIME = "6:30 AM"
+     END_TIME = "10:30 PM"
   
      TIME_SLOTS = ALL_TIMES[ALL_TIMES.index(START_TIME)..ALL_TIMES.index(END_TIME)]
 end
