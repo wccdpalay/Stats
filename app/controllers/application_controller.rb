@@ -49,19 +49,9 @@ class ApplicationController < ActionController::Base
   end
   
   def get_closest_time(t = Time.now)
-    tval = ""
     hr = ""
     min = ""
-    if t.min < 16
-        hr = (t.hour - 1)
-        min =  ":00"
-        if hr >= 12
-          hr -= 12
-          min += " PM"
-        else
-          min += " AM"
-        end      
-    elsif (t.min >=16 && t.min < 45)
+    if (t.min <= 50)
         hr =  t.hour
         min = ":30"
         if hr >= 12
@@ -70,19 +60,18 @@ class ApplicationController < ActionController::Base
         else
           min += " AM"
         end
-    elsif t.min >= 46
+    else
         hr = (t.hour + 1)
-        min = ":00"
+        min = ":30"
         if hr >= 12
           hr -= 12
           min += " PM"
         else
           min += " AM"
         end
-    else
-      
     end
     tval = hr.to_s + min.to_s
+    tval
   end
        
 end
