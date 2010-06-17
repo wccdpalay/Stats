@@ -54,8 +54,11 @@ class ApplicationController < ActionController::Base
     if (t.min <= 50)
         hr =  t.hour
         min = ":30"
-        if hr >= 12
+        if hr > 12
           hr -= 12
+          min += " PM"
+        elsif
+          hr == 12
           min += " PM"
         else
           min += " AM"
