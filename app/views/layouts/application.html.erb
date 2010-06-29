@@ -145,8 +145,8 @@
     <div class="moduletable_menu">
       <h3>Admin Menu</h3>
       <ul class="menu">
-        <li><%= link_to "view today's stats", :controller => :stats, :action => :show, :date => {:year => Date.today.year, :month => Date.today.month, :day => Date.today.day } %></li>
-        <% form_tag url_for(:controller => :stats, :action => :show), :method => "get" do -%>
+        <li><%= link_to "view today's stats", :controller => :stats, :action => :view, :date => {:year => Date.today.year, :month => Date.today.month, :day => Date.today.day } %></li>
+        <% form_tag url_for(:controller => :stats, :action => :view), :method => "get" do -%>
           <%= text_field_tag 'date[:year]', 'year'%>
           <%= text_field_tag 'date[:month]', 'month'%>
           <%= text_field_tag 'date[:day]', 'day'%>

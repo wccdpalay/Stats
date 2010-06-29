@@ -18,24 +18,21 @@ class StatsController < ApplicationController
       format.xml  { render :xml => @stats }
     end
   end
+
+  def view
+    if params[:date] != nil
+      @stats = Stat.find_all_by_date(Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i))
+    else
+      @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date > ?", (Date.today-1)])
+    end
+  end
   
 
 
   # GET /stats/1
   # GET /stats/1.xml
   def show
-    
-    if params[:id] == "all"
-      @stat = Stat.find(:all)
-    elsif params[:date] != nil
-      
-      @stat = Stat.find_all_by_date(Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i))
-    else
       @stat = Stat.find(params[:id])
-    end
-
-
-    
 
 
     respond_to do |format|
