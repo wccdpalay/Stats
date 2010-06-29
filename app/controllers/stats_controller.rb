@@ -21,9 +21,12 @@ class StatsController < ApplicationController
 
   def view
     if params[:date] != nil
-      @stats = Stat.find_all_by_date(Date.new(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i))
+      @date = Date.new((params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i))
+      @stats = Stat.find_all_by_date(@date)
+      @date = @date.strftime("%A, %B %d, %Y")
     else
       @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date > ?", (Date.today-1)])
+      @date = Date.today.strftime("%A, %B %d, %Y")
     end
   end
   
