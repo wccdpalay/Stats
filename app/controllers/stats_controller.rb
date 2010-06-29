@@ -25,7 +25,7 @@ class StatsController < ApplicationController
       month = params[:date][:month]
       day = params[:date][:day]
 
-      if ((2000..3000.member?(year.to_i)) && (1..12.member?(month.to_i)) && (1..31.member?(day.to_i)))
+      if (((2000..3000).member?(year.to_i)) && ((1..12).member?(month.to_i)) && ((1..31).member?(day.to_i)))
         @date = Date.new(year.to_i, month.to_i, day.to_i)
         @stats = Stat.find_all_by_date(@date)
         @date = @date.strftime("%A, %B %d, %Y")
