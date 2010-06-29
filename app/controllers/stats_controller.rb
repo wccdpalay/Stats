@@ -27,9 +27,13 @@ class StatsController < ApplicationController
     
     if params[:id] == "all"
       @stat = Stat.find(:all)
+    elsif params[:date] != nil
+      @stat = Stat.find_all_by_date(Date.new(params[:date][:year],params[:date][:month],params[:date][:day]))      
     else
       @stat = Stat.find(params[:id])
     end
+
+
     
 
 

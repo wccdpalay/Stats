@@ -19,6 +19,7 @@
 		if (el.value < 0 || el.value > max )
 		{
 			el.value = 0;
+            el.focus();
 			alert("Improper value in " + el.name.match(/\[.*\]/)[0]);
 			el.focus();
 		}
@@ -48,6 +49,7 @@
 		check_vals(document.getElementById("stat_gu"), 70);
 		check_vals(document.getElementById("stat_ll"), 10);
 		check_vals(document.getElementById("stat_ref"), 38);
+        check_vals(document.getElementById("stat_ref"), 99999999);
 		
 		
 		stat_total.value = parseInt(document.getElementById("stat_scanners").value) + parseInt(document.getElementById("stat_video").value) +
@@ -138,7 +140,22 @@
 			<li class="item53"><a href="/../schedule"><span>Schedule</span></a></li>
 			<li class="item24"><a href="/index.php?option=com_user&amp;view=login&amp;Itemid=24"><span>Logout</span></a></li>
 			</ul>
-</div> 
+</div>
+<% if admin? -%>
+    <div class="moduletable_menu">
+      <h3>Admin Menu</h3>
+      <ul class="menu">
+        <li><%= link_to "view today's stats", :controller => :stats, :action => :show, :date => {:year => Date.today.year, :month => Date.today.month, :day => Date.today.day } %></li>
+        <% form_tag url_for(:controller => :stats, :action => :show), :method => "get" do -%>
+          <% text_field_tag 'date[:year]', 'year'%>
+          <% text_field_tag 'date[:month]', 'month'%>
+          <% text_field_tag 'date[:day]', 'day'%>
+        <% submit_tag 'Find Stats' %>
+        <% end -%>
+
+      </ul>
+</div>
+<% end -%>
 </div>
 </div>
 
