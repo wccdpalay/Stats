@@ -1,5 +1,8 @@
-<h1>Listing stats for <%=@date%></h1>
+<% content_for("main_header1")  do %>
+Listing stats for <%=@date%>
+<%end-%>
 
+<% content_for("main_content1")  do %>
 <table border=1 id="stat_list">
   <tr>
   	<th>User</th>
@@ -38,11 +41,11 @@
 	<tr><td><%= f.label "Language Lab" %></td><td><%= f.text_field :ll, {:value => 0, :onchange => 'update_total()'} %></td></tr>
 	<tr><td><%= f.label :ref %></td><td><%= f.text_field :ref, {:value => 0, :onchange => 'update_total()'} %></td></tr>
 	<tr><td><%= f.label :comment %></td><td><%= f.text_area :comment %></td></tr>
-	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>  
+	<tr><td><%= f.label :date %></td><td><%= f.date_select :date%></td></tr>
 	<tr><td><%= f.label :time %></td><td><%= select("stat", "time", options_for_select(TIME_SLOTS, @now), :onchange => 'check_times()')%></td></tr>
 	<tr><td><%= f.label :door_counter%>(Only for end of the day!)</td><td><%= f.text_field :eod_door%></td></tr>
 	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>
 	<tr style="text-align: center;"><td colspan = 2 style="text-align: center;">&nbsp;<%= f.submit 'Create' %></td></tr>
   </table>
-<% end %>
-
+<% end -%>
+<% end -%>

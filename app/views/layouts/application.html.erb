@@ -127,15 +127,16 @@
             </div>
           </div>
           <!-- END SIDE BAR -->
+          <!-- BEGIN MAIN PANEL-->
           <div class="art-layout-cell art-content">
             <div class="art-post">
               <div class="art-post-body">
                 <div class="art-post-inner">
                   <h2 class="art-postheader">
-                    <%= yield :main_header %>
+                    <%= yield :main_header1 %>
                   </h2>
                   <div class="art-postcontent">
-                    <%= yield :main_content%>
+                    <%= yield :main_content1%>
                   </div>
                 </div>
               </div>
@@ -144,9 +145,10 @@
               <div class="art-post-body">
                 <div class="art-post-inner">
                   <h2 class="art-postheader">
+                    <%= yield :main_header2 %>
                   </h2>
                   <div class="art-postcontent">
-                    <%= yield %>
+                    <%= yield :main_content2 %>
                   </div>
                 </div>
               </div>
