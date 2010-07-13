@@ -1,22 +1,26 @@
-<h1>Listing stats for <%=@date%></h1>
-<table border=1 id="stat_list">
-  <tr>
-  	<th>User</th>
-    <th>Scan</th>
-    <th>Video </th>
-    <th>Macs</th>
-    <th>SA Short</th>
-    <th>SA Long</th>
-    <th>GU</th>
-    <th>LL</th>
-	<th>Ref</th>
-    <th>Comment</th>
-    <th>Date</th>
-	<th>Time</th>
-	<th>EOD Door</th>
-  </tr>
+<% content_for "main_header1" do %>
+    Listing stats for <%=@date%>
+<% end -%>
+<% content_for "main_content1" do %>
+    <table border=1 id="stat_list">
+      <tr>
+        <th>User</th>
+        <th>Scan</th>
+        <th>Video </th>
+        <th>Macs</th>
+        <th>SA Short</th>
+        <th>SA Long</th>
+        <th>GU</th>
+        <th>LL</th>
+        <th>Ref</th>
+        <th>Comment</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>EOD Door</th>
+      </tr>
 
-<% @stats.each do |stat| %>
-  <%= render :partial => 'stat_row', :locals => {:stat => stat} %>
-<% end %>
-</table>
+    <% @stats.each do |stat| %>
+      <%= render :partial => 'stat_row', :locals => {:stat => stat} %>
+    <% end %>
+    </table>
+<% end -%>

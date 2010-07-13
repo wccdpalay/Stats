@@ -1,16 +1,23 @@
-<table border=1>
-  	<caption>Statistics for <%=@stat.date%> at <%=@stat.time%></caption>
-	<tr><td><label>User Name</label></td><td><%=h @stat.user.username %></td></tr>
-	<tr><td><label>Scanners</label></td><td> <%=h @stat.scanners %></td></tr>
-	<tr><td><label>Video</label><td><%=h @stat.video %></td></tr>
-	<tr><td><label>Macs</label></td><td><%=h @stat.macs %></tr>
-	<tr><td><label>SA Short</label></td><td><%=h @stat.sa_short %></tr>
-	<tr><td><label>SA Long</label></td><td><%=h @stat.sa_long %></tr>
-  	<tr><td><label>General Use</label></td><td><%=h @stat.gu %></td></tr>
-	<tr><td><label>Language Lab</label></td><td><%=h @stat.ll %></td></tr>
-	<tr><td><label>Reference</label></td><td><%=h @stat.ref %></td></tr>
-	<tr><td><label>Comment</label></td><td><%=h @stat.comment %></td></tr>
-  </table>
+<% content_for "main_header1" do %>
+    Statistics for <%=@stat.date%> at <%=@stat.time%>
+<% end -%>
 
-<%= link_to 'Edit', edit_stat_path(@stat) %> |
-<%= link_to 'Back', stats_path %>
+<% content_for "main_content1" do %>
+    <table border=1>
+        <caption>Statistics for <%=@stat.date%> at <%=@stat.time%></caption>
+        <tr><td><label>User Name</label></td><td><%=h @stat.user.username %></td></tr>
+        <tr><td><label>Scanners</label></td><td> <%=h @stat.scanners %></td></tr>
+        <tr><td><label>Video</label><td><%=h @stat.video %></td></tr>
+        <tr><td><label>Macs</label></td><td><%=h @stat.macs %></tr>
+        <tr><td><label>SA Short</label></td><td><%=h @stat.sa_short %></tr>
+        <tr><td><label>SA Long</label></td><td><%=h @stat.sa_long %></tr>
+        <tr><td><label>General Use</label></td><td><%=h @stat.gu %></td></tr>
+        <tr><td><label>Language Lab</label></td><td><%=h @stat.ll %></td></tr>
+        <tr><td><label>Reference</label></td><td><%=h @stat.ref %></td></tr>
+        <tr><td><label>Comment</label></td><td><%=h @stat.comment %></td></tr>
+      </table>
+
+    <%= link_to 'Edit', edit_stat_path(@stat) %> |
+    <%= link_to 'Back', stats_path %>
+
+<% end -%>

@@ -1,5 +1,8 @@
-<h1>Enter new statistics</h1>
+<% content_for "main_header1" do %>
+    Enter new statistics
+<% end -%>
 
+<% content_for "main_content1" do %>
 <% form_for(@stat) do |f| %>
   <%= f.error_messages %>
   <table border=1>
@@ -23,3 +26,4 @@
 <% end %>
 
 <%= link_to 'Back', stats_path %>
+<% end -%>
