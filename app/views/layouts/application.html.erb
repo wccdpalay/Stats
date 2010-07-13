@@ -29,7 +29,7 @@
 	function check_times()
 	{
 		var els = stat_list.getElementsByClassName("time_col");
-		var stat_time = document.getElementById("stat_time")
+		var stat_time = document.getElementById("stat_time");
 		for (var i = 0; i < els.length; i++){
 			if (els[i].innerHTML == stat_time.value) {
 				alert("This time has already been recorded!");
@@ -53,75 +53,126 @@
         check_vals(document.getElementById("stat_ref"), 99999999);
 		
 		
-		stat_total.value = parseInt(document.getElementById("stat_scanners").value) + parseInt(document.getElementById("stat_video").value) +
+		document.getElementById("stat_total").value = parseInt(document.getElementById("stat_scanners").value) + parseInt(document.getElementById("stat_video").value) +
 			parseInt(document.getElementById("stat_macs").value) + parseInt(document.getElementById("stat_sa_short").value) + parseInt(document.getElementById("stat_sa_long").value) + 
 			parseInt(document.getElementById("stat_gu").value) + parseInt(document.getElementById("stat_ll").value) + parseInt(document.getElementById("stat_ref").value); 
 	}
 </script>
 </head>
 <body>
-
-<div id="ja-wrapper">
-
+<div id="art-page-background-gradient"></div>
+<div id="art-page-background-glare">
+  <div id="art-page-background-glare-image"></div>
+</div>
+<div id="art-main">
+  <div class="art-sheet">
+    <div class="art-sheet-tl"></div>
+    <div class="art-sheet-tr"></div>
+    <div class="art-sheet-bl"></div>
+    <div class="art-sheet-br"></div>
+    <div class="art-sheet-tc"></div>
+    <div class="art-sheet-bc"></div>
+    <div class="art-sheet-cl"></div>
+    <div class="art-sheet-cr"></div>
+    <div class="art-sheet-cc"></div>
+    <div class="art-sheet-body">
 <!-- TOP BAR -->
-<div id="ja-headerwrap"> 
-	<div id="ja-header" class="clearfix" style="background: #323232; width: 100%;"> 
- 
-			<h1 class="logo-text"> 
-			<a href="/index.php" title="Computer Commons Staff Site"><span style="color: #AAA;">Serafina - Staff Site</span></a> 
-		</h1> 
-		<p class="site-slogan" style="color:#CCCCCC;">Washtenaw Community College</p> 
-	
-
-
-	
-	</div> 
-</div> 
-<!-- END TOP BAR -->
-<div id="ja-mainbody">
-<!-- MAIN PANEL -->
-<div id="ja-contentwrap" style="background: #fcfcfc; width: 75%;">
-<p style="color: green" id="notice"><%= flash[:notice] %></p>
-<p style="float:right;">Logged in as: <%= current_user %></p>
-<%= yield %>
-
-<% if (current_user == "dpalay") -%>
-      <div id="debug">
-
-        <a href="#" onclick="Element.toggle('params_debug_info');return false;">
-            params
-          </a> |
-        <a href="#" onclick="Element.toggle('session_debug_info');return false;">
-          session
-        </a> |
-        <a href="#" onclick="Element.toggle('env_debug_info');return false;">
-          env
-        </a> |
-        <a href="#" onclick="Element.toggle('request_debug_info');return false;">
-          request
-        </a> |
-        <fieldset id="params_debug_info" class="debug_info">
-          <legend>params</legend>
-          <%= debug(params) %>
-        </fieldset>
-        <fieldset id="session_debug_info" class="debug_info" style="display: none;">
-          <legend>session</legend>
-          <%= debug(session) %>
-        </fieldset>
-        <fieldset id="env_debug_info" class="debug_info" style="display: none;">
-          <legend>env</legend>
-          <%= debug(request.env) %>
-        </fieldset>
-        <fieldset id="request_debug_info" class="debug_info" style="display: none;">
-          <legend>request</legend>
-          <%= debug(request) %>
-        </fieldset>
+      <div class="art-header">
+        <div class="art-header-jpg" style="background-image: url('https://serafina.labs.is.wccnet.org/templates/images/header.jpg')"></div>
+        <div class="art-logo">
+          <h1 id="name-text" class="art-logo-name">
+            <a href="/index.php" title="The Computer Commons"></a>
+          </h1>
+          <div class="art-logo-text" id="slogan-text">Washtenaw Community College</div>
+        </div>
       </div>
-    <% end -%>
-<!-- END MAIN PANEL-->
+<!-- END TOP BAR -->
+      <div class="art-content-layout">
+        <div class="art-content-row">
+          <!-- Start SIDE BAR -->
+          <div class="art-layout-cell art-sidebar1">
+            <div class="art-block">
+              <div class="art-block-body">
+                <div class="art-blockheader">
+                  <div class="l"></div>
+                  <div class="r"></div>
+                  <div class="t"> Main Menu </div>
+                </div>
+                <div class="art-blockcontent">
+                  <div class="art-blockcontent-body">
+                    <ul class="menu">
+                      <%= yield :main_menu %>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cleared"></div>
+              </div>
+            </div>
+            <div class="art-block">
+              <div class="art-block-body">
+                <div class="art-blockheader">
+                  <div class="l"></div>
+                  <div class="r"></div>
+                  <div class="t"> User Menu </div>
+                </div>
+                <div class="art-blockcontent">
+                  <div class="art-blockcontent-body">
+                    <ul class="menu">
+                      <%= yield :user_menu %>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cleared"></div>
+              </div>
+            </div>
+          </div>
+          <!-- END SIDE BAR -->
+          <div class="art-layout-call art-content">
+            <%= yield %>
+            <% if (current_user == "dpalay") -%>
+                  <div id="debug">
+
+                    <a href="#" onclick="Element.toggle('params_debug_info');return false;">
+                        params
+                      </a> |
+                    <a href="#" onclick="Element.toggle('session_debug_info');return false;">
+                      session
+                    </a> |
+                    <a href="#" onclick="Element.toggle('env_debug_info');return false;">
+                      env
+                    </a> |
+                    <a href="#" onclick="Element.toggle('request_debug_info');return false;">
+                      request
+                    </a> |
+                    <fieldset id="params_debug_info" class="debug_info">
+                      <legend>params</legend>
+                      <%= debug(params) %>
+                    </fieldset>
+                    <fieldset id="session_debug_info" class="debug_info" style="display: none;">
+                      <legend>session</legend>
+                      <%= debug(session) %>
+                    </fieldset>
+                    <fieldset id="env_debug_info" class="debug_info" style="display: none;">
+                      <legend>env</legend>
+                      <%= debug(request.env) %>
+                    </fieldset>
+                    <fieldset id="request_debug_info" class="debug_info" style="display: none;">
+                      <legend>request</legend>
+                      <%= debug(request) %>
+                    </fieldset>
+                  </div>
+                <% end -%>
+            <!-- END MAIN PANEL-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<!-- SIDE BAR -->
+<!-- SIDE BAR
 <div class="moduletable_menu"> 
 	<h3>Main Menu</h3> 
 	<ul class="menu"><li id="current" class="active item1"><a href="https://serafina.labs.is.wccnet.org/"><span>Home</span></a></li>
@@ -160,6 +211,6 @@
 </div>
 </div>
 
-	
+</div>        -->
 </body>
 </html>
