@@ -24,10 +24,14 @@ Listing stats for <%=@date%>
   <%= render :partial => 'stat_row', :locals => {:stat => stat} %>
 <% end %>
 </table>
+<% end -%>
 
-<br />
-<h2>Computer Commons Statistics</h2>
+<% content_for("main_header2") do %>
+    Computer Commons Statistics
+<% end -%>
 
+
+<% content_for("main_content2") do %>
 <% form_remote_for(@stat) do |f| %>
   <%= f.error_messages %>
   <table border=1>
