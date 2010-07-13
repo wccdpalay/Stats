@@ -39,6 +39,9 @@ namespace :deploy do
   task :start, :roles => :app do
     run "touch #{current_release}/tmp/restart.txt"
     run "cp ~/Stats_database.yml ~/Sites/Stats/current/config/database.yml"
+    run "ln -fs /Library/WebServer/Documents/Joomla/templates/template.css #{current_release}/public/stylesheets/template.css"
+    run "ln -fs /Library/WebServer/Documents/Joomla/templates/images #{current_release}/public/stylesheets/images"
+
   end
 
   task :stop, :roles => :app do
@@ -49,6 +52,8 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "cp ~/Stats_database.yml ~/Sites/Stats/current/config/database.yml"
     run "touch #{current_release}/tmp/restart.txt"
+    run "ln -fs /Library/WebServer/Documents/Joomla/templates/template.css #{current_release}/public/stylesheets/template.css"
+    run "ln -fs /Library/WebServer/Documents/Joomla/templates/images #{current_release}/public/stylesheets/images"
   end
 
 end
