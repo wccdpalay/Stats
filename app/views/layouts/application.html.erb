@@ -68,7 +68,7 @@
 <body style="background-image: url('https://serafina.labs.is.wccnet.org/templates/images/page_t.jpg')">
 <div id="art-page-background-gradient" style="background-image: url('https://serafina.labs.is.wccnet.org/templates/images/page_g.jpg')"></div>
 <div id="art-page-background-glare">
-  <div id="art-page-background-glare-image" style="background-image : url('https://serafina.labs.is.wccnet.org/templates/images/page_gl.png')"></div>
+  <div id="art-page-background-glare-image" style="background-image: url('https://serafina.labs.is.wccnet.org/templates/images/page_gl.png')"></div>
 </div>
 <div id="art-main">
   <div class="art-sheet">
@@ -88,6 +88,8 @@
         <div class="art-logo">
           <h1 id="name-text" class="art-logo-name">
             <a href="/index.php" title="The Computer Commons">The Computer Commons</a>
+            <p>Css not loading? Click <a href="https://serafina.labs.is.wccnet.org/templates/template.css">Here</a>
+              and accept the certificate</p>
           </h1>
           <div id="slogan-text" class="art-logo-text">Washtenaw Community College</div>
         </div>
@@ -107,10 +109,7 @@
                 <div class="art-blockcontent">
                   <div class="art-blockcontent-body">
                     <ul class="menu">
-                      <li id="current" class="active item1"><a href="https://serafina.labs.is.wccnet.org/"><span>Home</span></a></li>
-                      <li class="item73"><a href="/index.php?option=com_contact&amp;view=category&amp;catid=12&amp;Itemid=73"><span>Contacts</span></a></li>
-                      <li class="item75"><a href="/index.php?option=com_jpfchat&amp;Itemid=75"><span>Help Chat</span></a></li>
-                      <li class="item72"><a href="/order.php"><span>Order Supplies</span></a></li>
+                      <li><a href="/index.php"><span>Home</span></a></li>
                       <%= yield :main_menu %>
                     </ul>
                   </div>
@@ -128,13 +127,7 @@
                 <div class="art-blockcontent">
                   <div class="art-blockcontent-body">
                     <ul class="menu">
-                      <li class="item77"><a href="http://www.atomiclearning.com/" target="_blank"><span>Atomic Learning</span></a></li>
-                      <li class="item70"><a href="/index.php?option=com_contact&amp;view=category&amp;catid=0&amp;Itemid=70"><span>Contacts</span></a></li>
-                      <li class="parent item56"><a href="/index.php?option=com_content&amp;view=article&amp;id=46&amp;Itemid=56"><span>Documents</span></a></li>
-                      <li class="item58"><a href="/index.php?option=com_kunena&amp;Itemid=58"><span>Forum</span></a></li>
-                      <li class="item20"><a href="/index.php?option=com_user&amp;view=user&amp;task=edit&amp;Itemid=20"><span>My Details</span></a></li>
                       <li class="item53"><a href="/../schedule"><span>Schedule</span></a></li>
-                      <li class="item24"><a href="/index.php?option=com_user&amp;view=login&amp;Itemid=24"><span>Logout</span></a></li>
                       <%= yield :user_menu %>
                     </ul>
                   </div>
@@ -142,6 +135,25 @@
                 <div class="cleared"></div>
               </div>
             </div>
+            <% if admin? -%>
+            <div class="art-block">
+              <div class="art-block-body">
+                <div class="art-blockheader">
+                  <div class="l" style="background-image: url('http://serafina.labs.is.wccnet.org/templates/images/blockheader.png')"></div>
+                  <div class="r" style="background-image: url('http://serafina.labs.is.wccnet.org/templates/images/blockheader.png')"></div>
+                  <div class="t"> Admin Menu </div>
+                </div>
+                <div class="art-blockcontent">
+                  <div class="art-blockcontent-body">
+                    <ul class="menu">
+                      <%= yield :admin_menu %>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cleared"></div>
+              </div>
+            </div>
+            <% end -%>
           </div>
           <!-- END SIDE BAR -->
           <!-- BEGIN MAIN PANEL-->
