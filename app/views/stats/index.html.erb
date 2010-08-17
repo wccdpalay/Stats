@@ -1,20 +1,20 @@
 <% content_for "main_content1" do -%>
  <% if admin? %>
- <canvas id="example" width="400" height="300"></canvas>
+ <canvas id="canvasid" width="400" height="300"></canvas>
 
   <script type="text/javascript">
-    var g = new Bluff.Line('example', '600x300');
-    g.title = 'My Graph';
+    var g = new Bluff.Line('canvasid', '600x300');
+    g.title = 'Comparing Stats';
     g.tooltips = true;
 
     g.no_data_message = "No data entered yet.";
     g.theme_37signals();
 
-    g.data("Today", <%= @stats.map {|stat| stat.total}.inspect%>);
-    g.data("Yesterday", <%= Stat.find_all_by_date(Date.today-1).map {|stat| stat.total}.inspect%>);
+    g.data("Today", <%= get_stats_values(Date.today).inspect%>);
+    g.data("Yesterday", <%= get_stats_values(Date.today-1).inspect%>);
 
 
-    g.labels = {0: '2003', 2: '2004', 4: '2005'};
+    g.labels = {<%= TIME_SLOTS.map{ |x| "#{TIME_SLOTS.index(x)}: '#{x}', "}.to_s.chomp(", ")%>};
 
     g.draw();
   </script>    
