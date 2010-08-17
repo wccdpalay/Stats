@@ -76,7 +76,7 @@ class Stat < ActiveRecord::Base
   end
 
   def total
-    stat.gu + stat.sa_long + stat.sa_short + stat.ll + stat.ref + stat.macs + stat.video + stat.scanners
+    gu + sa_long + sa_short + ll + ref + macs + video + scanners
   end
 
 end

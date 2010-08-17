@@ -11,6 +11,7 @@
     <td><%= check_box_tag("has_comment", 'yes', (stat.comment != ""), {:disabled => "true"}) %></td>
     <td><%=h stat.date %></td>
 	<td class="time_col"><%=h stat.time %></td>
+    <td><%=h stat.total%></td>
 	<td><%=h stat.eod_door%></td>
     <td><%= link_to 'Show', stat %></td>
     <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
