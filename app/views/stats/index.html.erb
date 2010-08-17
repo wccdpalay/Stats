@@ -1,5 +1,4 @@
 <% content_for "main_content1" do -%>
- <% if admin? %>
  <canvas id="canvasid" width="400" height="300"></canvas>
 
   <script type="text/javascript">
@@ -14,11 +13,10 @@
     g.data("Yesterday", <%= get_stats_values(Date.today-1).inspect%>);
 
 
-    g.labels = {<%= TIME_SLOTS.map{ |x| "#{TIME_SLOTS.index(x)}: '#{x}', "}.map!{|x| (x[0,1].to_i % 2 == 0) ? x : nil}.to_s.chomp(", ")%>};
+    g.labels = {<%= TIME_SLOTS.map{ |x| "#{TIME_SLOTS.index(x)}: '#{x}', "}.map!{|x| (x.scan(/[0-9]*/)[0].to_i % 2 == 0) ? x : nil}.to_s.chomp(", ")%>};
 
     g.draw();
   </script>    
- <%end-%>
 <%end-%>
 
 <% content_for("main_header2")  do %>
