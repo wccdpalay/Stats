@@ -1,8 +1,9 @@
-<% content_for "main_header1" do -%>
+<% content_for "main_content1" do -%>
+ <% if admin? %>
  <canvas id="example" width="400" height="300"></canvas>
 
   <script type="text/javascript">
-    var g = new Bluff.Line('example', '400x300');
+    var g = new Bluff.Line('example', '600x300');
     g.title = 'My Graph';
     g.tooltips = true;
 
@@ -17,6 +18,7 @@
 
     g.draw();
   </script>    
+ <%end-%>
 <%end-%>
 
 <% content_for("main_header2")  do %>
