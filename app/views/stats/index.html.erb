@@ -1,8 +1,29 @@
-<% content_for("main_header1")  do %>
+<% content_for "main_header1" do -%>
+ <canvas id="example" width="400" height="300"></canvas>
+
+  <script type="text/javascript">
+    var g = new Bluff.Line('example', '400x300');
+    g.title = 'My Graph';
+    g.tooltips = true;
+
+    g.theme_37signals();
+
+    g.data("Apples", [1, 2, 3, 4, 4, 3]);
+    g.data("Oranges", [4, 8, 7, 9, 8, 9]);
+    g.data("Watermelon", [2, 3, 1, 5, 6, 8]);
+    g.data("Peaches", [9, 9, 10, 8, 7, 9]);
+
+    g.labels = {0: '2003', 2: '2004', 4: '2005'};
+
+    g.draw();
+  </script>    
+<%end-%>
+
+<% content_for("main_header2")  do %>
 Listing stats for <%=@date%>
 <%end-%>
 
-<% content_for("main_content1")  do %>
+<% content_for("main_content2")  do %>
 <table border=1 id="stat_list">
   <tr>
   	<th>User</th>
@@ -26,12 +47,11 @@ Listing stats for <%=@date%>
 </table>
 <% end -%>
 
-<% content_for("main_header2") do %>
+<% content_for("main_header3") do %>
     Computer Commons Statistics
 <% end -%>
 
 
-<% content_for("main_content2") do %>
 <% form_remote_for(@stat) do |f| %>
   <%= f.error_messages %>
   <table border=1>
@@ -51,5 +71,4 @@ Listing stats for <%=@date%>
 	<tr><td><%= f.label "Total"%></td><td><input id="stat_total" value=0 readonly="readonly"></td></tr>
 	<tr style="text-align: center;"><td colspan = 2 style="text-align: center;">&nbsp;<%= f.submit 'Create' %></td></tr>
   </table>
-<% end -%>
 <% end -%>

@@ -1,3 +1,5 @@
+#This controller is designed to assist in getting the User from the Joomla login.
+
 class JoomlaController < ApplicationController
   before_filter :check_user, :except => [:debug, :kick]
 

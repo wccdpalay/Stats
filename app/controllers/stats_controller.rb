@@ -1,3 +1,4 @@
+#The stats controller is a scaffold for the creation and maintenance of Stats 
 class StatsController < ApplicationController
   
   before_filter :check_user

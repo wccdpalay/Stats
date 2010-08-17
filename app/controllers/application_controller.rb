@@ -1,3 +1,11 @@
+#This Controller's methods are available to all other controllers.
+#*check_user - finds the userID from the Serafina session and looks up the user from the Joomla DB
+#*get_user - Given a uID, looks up the User Object
+#*admin? - Checks if the current user is an administrator
+#*get_joomla_session_id - Gets the sessionID from the cookie
+#*get_closest_time - For the stats, finds the closest 1/2 hour to the current time (or a given time)
+
+
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
@@ -7,7 +15,9 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-  
+
+
+    #
     def check_user()
     sess_id = get_joomla_session_id
     if sess_id == nil
