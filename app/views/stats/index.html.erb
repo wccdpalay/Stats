@@ -14,7 +14,7 @@
     g.data("Yesterday", <%= get_stats_values(Date.today-1).inspect%>);
 
 
-    g.labels = {<%= TIME_SLOTS.map{ |x| "#{TIME_SLOTS.index(x)}: '#{x}', "}.to_s.chomp(", ")%>};
+    g.labels = {<%= TIME_SLOTS.map{ |x| "#{TIME_SLOTS.index(x)}: '#{x}', "}.map!{|x| (x[0,1].to_i % 2 == 0) ? x : nil}.to_s.chomp(", ")%>};
 
     g.draw();
   </script>    
