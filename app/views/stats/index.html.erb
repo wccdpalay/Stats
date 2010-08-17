@@ -7,12 +7,12 @@
     g.title = 'My Graph';
     g.tooltips = true;
 
+    g.no_data_message = "No data entered yet.";
     g.theme_37signals();
 
-    g.data("Apples", [1, 2, 3, 4, 4, 3]);
-    g.data("Oranges", [4, 8, 7, 9, 8, 9]);
-    g.data("Watermelon", [2, 3, 1, 5, 6, 8]);
-    g.data("Peaches", [9, 9, 10, 8, 7, 9]);
+    g.data("Today", <%= @stats.map {|stat| stat.total}.inspect%>);
+    g.data("Yesterday", <%= Stat.find_all_by_date(Date.today-1).map {|stat| stat.total}.inspect%>);
+
 
     g.labels = {0: '2003', 2: '2004', 4: '2005'};
 

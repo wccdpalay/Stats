@@ -75,5 +75,8 @@ class Stat < ActiveRecord::Base
     errors.add_to_base("Can't be negative!") unless ref >= 0
   end
 
+  def total
+    stat.gu + stat.sa_long + stat.sa_short + stat.ll + stat.ref + stat.macs + stat.video + stat.scanners
+  end
 
 end
