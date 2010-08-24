@@ -20,6 +20,42 @@ class StatsController < ApplicationController
     end
   end
 
+  def compare
+    if params[:date1] != nil
+      year1 = params[:date1][:year]
+      month1 = params[:date1][:month]
+      day1 = params[:date1][:day]
+
+    if params[:date2] != nil
+      year2 = params[:date2][:year]
+      month2 = params[:date2][:month]
+      day2 = params[:date2][:day]
+
+      #So, the year 3000 is a bit optimistic, but I figure the check doesn't take THAT much longer than say...2020
+
+      #check that date1 is made up of valid entries
+    if (((2000..3000).member?(year1.to_i)) && ((1..12).member?(month1.to_i)) && ((1..31).member?(day1.to_i)))
+      @date1 = Date.new(year1.to_i, month1.to_i, day1.to_i)
+    else
+      flash[:notice] = "Invalid date entries for the FROM date.  You entered:  year: #{year1}, month: #{month1}, day: #{day1}"
+      redirect_to :action => :index
+    end                       \
+      #check that date2 is made up of valid entries
+    if (((2000..3000).member?(year2.to_i)) && ((1..12).member?(month2.to_i)) && ((1..31).member?(day2.to_i)))
+      @date2 = Date.new(year2.to_i, month2.to_i, day2.to_i)
+    else
+      flash[:notice] = "Invalid date entries for the TO date.  You entered:  year: #{year2}, month: #{month2}, day: #{day2}"
+      redirect_to :action => :index
+    end
+
+
+      @stats = Stat.find_by_sql(["SELECT * FROM stats WHERE date >= ? AND date <= ?", (@date1), (@date2)])
+      @date = "#{@date1.strftime("%A, %B %d, %Y")} to #{@date2.strftime("%A, %B %d, %Y")}"
+      render :action => "view"
+   end
+
+
+
   def view
     if params[:date] != nil
       year = params[:date][:year]

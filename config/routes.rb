@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :stats, :collection => [:view]
+  map.resources :stats, :collection => [:view, :compare]
 
   # The priority is based upon order of creation: first created -> highest priority.
 
