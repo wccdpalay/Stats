@@ -20,7 +20,7 @@ class StatsController < ApplicationController
     end
   end
 
-  def compare
+  def range
     if params[:date1] != nil
       year1 = params[:date1][:year]
       month1 = params[:date1][:month]
