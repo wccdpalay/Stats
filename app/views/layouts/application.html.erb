@@ -147,12 +147,15 @@
                       <%= yield :admin_menu %>
                           <% if admin? -%>
                             <li><%= link_to "view today's stats", :controller => :stats, :action => :view, :date => {:year => Date.today.year, :month => Date.today.month, :day => Date.today.day } %></li>
+                                <div id="find_stats_by_date" style="border: thin solid; text-align: center;">
+                                  <li>Stats by Date: </li>
                                 <% form_tag url_for(:controller => :stats, :action => :view), :method => "get" do -%>
                                   <%= text_field_tag 'date[year]', 'year'%>
                                   <%= text_field_tag 'date[month]', 'month'%>
                                   <%= text_field_tag 'date[day]', 'day'%>
                                   <%= submit_tag 'Find Stats' %>
                                 <% end -%>
+                          </div>
                           <% end -%>
                     </ul>
                   </div>
