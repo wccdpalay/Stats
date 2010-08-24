@@ -1,15 +1,15 @@
 <% content_for "main_content1" do -%>
  <canvas id="canvasid" width="700" height="300"></canvas>
 
-  <script type="text/javascript">
-    var g = new Bluff.Line('canvasid', '600x300');
+  <script type="text/javascript">                       
+    var g = new Bluff.Line('canvasid', '700x300');
     g.title = 'Comparing Stats';
     g.tooltips = true;
 
     g.no_data_message = "No data entered yet.";
     g.theme_37signals();
 
-    g.data("Today", <%= get_stats_values(Date.today).inspect%>);
+    g.data("Today", <%= get_stats_values(Date.today).inspect %>);
     g.data("Yesterday", <%= get_stats_values(Date.today-1).inspect%>);
 
 
